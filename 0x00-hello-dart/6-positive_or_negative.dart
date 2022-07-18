@@ -7,6 +7,5 @@ void main(List<String> args) {
     print('$nb is positive');
   }else {
     print('$nb is zero')
-  }
-
+  };
 }
