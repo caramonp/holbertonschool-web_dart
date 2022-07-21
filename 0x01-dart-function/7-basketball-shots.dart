@@ -1,17 +1,33 @@
 int whoWins(Map<String, int> team1, Map<String, int> team2) {
-  int sum1, sum2;
-  int pointT1 = team1['Free throws']!;
-  int pointT2 = team1['2 pointers']! * 2;
-  int pointT3 = team1['3 pointers']! * 3;
-  int pointT2_1 = team2['Free throws']!;
-  int pointT2_2 = team2['2 pointers']! * 2;
-  int pointT2_3 = team2['3 pointers']! * 3;
-  sum1 = pointT1 + pointT2 + pointT3;
-  sum2 = pointT2_1 + pointT2_2 + pointT2;
-  if (sum1 < sum2) {
-    return 2;
-  } else if (sum1 > sum2) {
-    return 1;
-  }else
-  return 0;
+  int freeThrows1 = 0;
+  int twoPointer = 0;
+  int treePointer = 0;
+  int freeThrows2 = 0;
+  int twoPointer2 = 0;
+  int treePointer2 = 0;
+  
+  var infoTeam1 = team1.forEach((key, value) => {
+    if (key == 'Free throws'){
+      freeThrows1 = value
+    }else if (key == '2 pointer'){
+      twoPointer = value * 2
+    } else 
+      treePointer = value * 3
+  });
+  
+  int sum1 = freeThrows1 + twoPointer + treePointer;
+  
+    var infoTeam2 = team2.forEach((key, value) => {
+    if (key == 'Free throws'){
+      freeThrows2 = value
+    }else if (key == '2 pointer'){
+      twoPointer2 = value * 2
+    } else 
+      treePointer2 = value * 3
+  });
+  
+  int sum2 = freeThrows2 + twoPointer2 + treePointer2;
+  
+  return sum1 > sum2 ? 1 : sum1 < sum2 ? 2 : 0;
+  
 }
