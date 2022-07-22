@@ -3,7 +3,7 @@ class Password {
 
     bool isValid() {
      
-      if(password.length >= 8 || password.length <= 16){
+      if(password.length < 8 || password.length > 16){
     return false;
   }
       
